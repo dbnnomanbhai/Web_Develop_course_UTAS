@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+  <title> Charity List </title>
+
+  <style>
+
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+
+  #list {text-align: center;
+    font-style: Sans-serif;
+    font-size: 12px;
+    background-color: #F5F5F5;
+    padding: 30px;
+}
+
+  .card img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  </style>
+
+ 
+ 
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+  <link rel="stylesheet" href="./assets/css/style.css">
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Combo&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+ 
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo"> Smile & Share</a>
+      </h1>
+
+      
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">Smile & Share</a>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html" class="navbar-link" data-nav-link>
+              <span>Home</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+          
+          
+
+ 
+
+       
+ <li>
+            <a href="Charitylist.html" class="navbar-link" data-nav-link>
+              <span> Charity List</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+  <li>
+            <a href="manage.html" class="navbar-link" data-nav-link>
+              <span>  Manage Charity</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+ <li>
+            <a href="master.html" class="navbar-link" data-nav-link>
+              <span>   Master Charity</span>
+
+              <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+       
+
+    </div>
+  </header>
+
+  <div class="container-fluid" style="padding: 0;">
+    <img src="./assets/images/Grey.jpg" style="width: 100%; height: 100px; object-fit: cover;">
+  </div>
+ 
+    <div class="container-fluid">
+     
+    <div class="container">
+        <img src="./assets/images/Charity List Header.png" alt="Charity List Page" style="width:100%;">
+      </div>
+
+
+
+    <h1 style="font-family:oswald; color: #c4982a; text-align: center">HEALTH</h1>
+    <p style="text-align: center;">Our charities are committed to improving health outcomes for all. We believe that access to quality healthcare, preventive measures, and mental well-being support are fundamental rights. Through awareness campaigns, medical assistance, and community health programs, we strive to empower individuals to lead healthier lives. Together, we can combat diseases, address health disparities, and foster resilience.</p>
+    
+    <div class="container-fluid" id="list">
+    <div class="row">
+        <div class="col-lg-4">
+          <div class="card">
+            <img  src="./assets/images/Heal Together Foundation.jfif" alt="Heal Together Foundation" width ="350" height="275">
+            <div class="container">
+              <h3 style="font-family:oswald; color: #c4982a; text-align: center">HEALTOGETHER FOUNDATION</h3>
+              <p style="text-align: center;">HealTogether Foundation is dedicated to promoting health equity and well-being. Through medical camps, health education, and preventive measures, we empower communities to lead healthier lives. Join us in the fight against diseases and ensure access to quality healthcare for all.</p>
+                <p style="text-align: center;"> <label for="Health 1 Goal">Goal Amount- $70000/$100000</label>
+                    <progress id="Health 1 Goal" max="100" value="70">70%</progress><br>
+                </p>
+              <p style="text-align: center;"><button class="button">Donate</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-4">
+          <div class="card">
+            <img src="./assets/images/Hope Health Alliance.jfif" alt="HopeHealth Alliance" width = "350" height="275">
+            <div class="container">
+              <h3 style="font-family:oswald; color: #c4982a; text-align: center">HOPEHEALTH ALLIANCE</h3>
+              <p style="text-align: center;">At HopeHealth Alliance, we believe that health is a fundamental right. Our mission is to provide medical assistance, mental health support, and nutrition programs to underserved populations. Together, we can create a healthier, happier world.</p>
+              <br>  
+              <p style="text-align: center;"> <label for="Health 2 Goal">Goal Amount- $80000/$200000</label>
+                    <progress id="Health 2 Goal" max="100" value="40">40%</progress><br>
+                </p>
+              <p style="text-align: center;"><button class="button">Donate</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-4">
+          <div class="card">
+            <img src="./assets/images/Wellness Warriors.jfif" alt="Wellness Warriors" width = "350" height="275">
+            <div class="container">
+              <h3 style="font-family:oswald; color: #c4982a; text-align: center">WELLNESS WARRIORS</h3>
+              <p style="text-align: center;">Wellness Warriors focuses on holistic health. From fitness programs to mental wellness workshops, we address physical, emotional, and social aspects. Join our community and be part of a movement that prioritizes well-being.</p>
+              <br>
+              <p style="text-align: center;">
+                <label for="Health 3 Goal">Goal Amount- $100000/$500000</label>
+                <progress id="Health 3 Goal" max="100" value="20">20%</progress><br>
+              </p>
+              <p style="text-align: center;"><button class="button">Donate</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 style="font-family:oswald; color: #c4982a; text-align: center">EDUCATION</h1>
+    <p style="text-align: center;">Education is a powerful tool for change. Our charity champions education at every stage of life. From early childhood development to adult literacy programs, we work to break barriers and provide equal opportunities. By supporting schools, scholarships, vocational training, and digital learning initiatives, we aim to create a brighter future. Education isn&apos;t just about knowledge; it&apos;s about empowerment and hope.</p>
+    
+    <div class="container-fluid" id="list">
+        <div class="row">
+            <div class="col-lg-4">
+              <div class="card">
+                <img  src="./assets/images/Bright Minds.jfif" alt="Bright Minds Foundation" width ="350" height="275">
+                <div class="container">
+                  <h3 style="font-family:oswald; color: #c4982a; text-align: center">BRIGHT MINDS FOUNDATION</h3>
+                  <p style="text-align: center;">Bright Minds Foundation believes that education transforms lives. We support schools, scholarships, and vocational training. Our goal is to bridge educational gaps and empower individuals to reach their full potential.</p>
+                    <p style="text-align: center;"> <label for="Education 1 Goal">Goal Amount- $900000/$1000000</label>
+                        <progress id="Education 1 Goal" max="100" value="90">90%</progress><br>
+                    </p>
+                  <p style="text-align: center;"><button class="button">Donate</button></p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-4">
+              <div class="card">
+                <img src="./assets/images/Learn for Life.jfif" alt="Learn for Life Initiative" width = "350" height="275">
+                <div class="container">
+                  <h3 style="font-family:oswald; color: #c4982a; text-align: center">LEARN FOR LIFE INITIATIVE</h3>
+                  <p style="text-align: center;">Learn for Life Initiative advocates for lifelong learning. Whether it's literacy programs, digital skills, or vocational courses, we're committed to education at every stage. Join us in shaping a brighter future.</p>
+                    <p style="text-align: center;">
+                        <label for="Education 2 Goal">Goal Amount- $480000/$800000</label>
+                        <progress id="Education 2 Goal" max="100" value="60">60%</progress><br>
+                    </p>
+                  <p style="text-align: center;"><button class="button">Donate</button></p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-4">
+              <div class="card">
+                <img src="./assets/images/EmpowerED.jfif" alt="EmpowerED" width = "350" height="275">
+                <div class="container">
+                  <h3 style="font-family:oswald; color: #c4982a; text-align: center">EmpowerED</h3>
+                  <p style="text-align: center;">EmpowerEd is all about empowering minds. We provide resources, mentorship, and educational tools. By investing in education, we invest in a better world.</p>
+                  <br>
+                  <p style="text-align: center;">
+                    <label for="Education 3 Goal">Goal Amount- $750000/$2000000</label>
+                    <progress id="Education 3 Goal" max="100" value="30">30%</progress><br>
+                  </p>
+                  <p style="text-align: center;"><button class="button">Donate</button></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <h1 style="font-family:oswald; color: #c4982a; text-align: center">ENVIRONMENT</h1>
+    <p style="text-align: center;">Our commitment to the environment extends beyond conservation—it&apos;s about stewardship. We advocate for sustainable practices, reforestation, clean energy, and waste reduction. Whether it&apos;s protecting endangered species, restoring ecosystems, or raising climate awareness, our purpose believes in leaving a positive footprint. Together, we can preserve our planet for generations to come.</p>
+    
+    <div class="container-fluid" id="list">
+        <div class="row">
+            <div class="col-lg-4">
+              <div class="card">
+                <img  src="./assets/images/Green Earth Guardians.jfif" alt="Green Earth Guardians" width ="350" height="275">
+                <div class="container">
+                  <h3 style="font-family:oswald; color: #c4982a; text-align: center">GREEN EARTH GUARDIANS</h3>
+                  <p style="text-align: center;">Green Earth Guardians is dedicated to safeguarding our planet. We plant trees, promote clean energy, and raise awareness about climate change. Join us in preserving nature for generations to come.</p>
+                  <br>  
+                  <p style="text-align: center;"> <label for="Enviornment 1 Goal">Goal Amount- $270000/$900000</label>
+                        <progress id="Enviornment 1 Goal" max="100" value="30">30%</progress><br>
+                    </p>
+                  <p style="text-align: center;"><button class="button">Donate</button></p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-4">
+              <div class="card">
+                <img src="./assets/images/Eco Harmony Foundation.jfif" alt="Eco Harmony Foundation" width = "350" height="275">
+                <div class="container">
+                  <h3 style="font-family:oswald; color: #c4982a; text-align: center">ECO HARMONY FOUNDATION</h3>
+                  <p style="text-align: center;">Eco Harmony Foundation believes in harmony between humans and the environment. Our initiatives include beach cleanups, wildlife conservation, and sustainable practices. Let's protect our Earth together.</p>
+                    <p style="text-align: center;">
+                        <label for="Enviornment 2 Goal">Goal Amount- $1000000/$10000000</label>
+                        <progress id="Enviornment 2 Goal" max="100" value="10">10%</progress><br>
+                    </p>
+                  <p style="text-align: center;"><button class="button">Donate</button></p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-4">
+              <div class="card">
+                <img src="./assets/images/Planet Care collective.jfif" alt="Planet Care Collective" width = "350" height="275">
+                <div class="container">
+                  <h3 style="font-family:oswald; color: #c4982a; text-align: center">PLANET CARE COLLECTIVE</h3>
+                  <p style="text-align: center;">PlanetCare Collective encourages eco-conscious living. From reducing plastic waste to advocating for green policies, we're committed to a healthier planet. Be part of the solution!</p>
+                  <br>
+                  <p style="text-align: center;">
+                    <label for="Enviornment 3 Goal">Goal Amount- $950000/$1000000</label>
+                    <progress id="Enviornment 3 Goal" max="100" value="95">95%</progress><br>
+                  </p>
+                  <p style="text-align: center;"><button class="button">Donate</button></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+<br>
+<p style="text-align: center;">Remember, these charities thrive on community support. Choose one that resonates with your values and make a difference today!</p>
+ <footer class="footer">
+    <div class="container">
+
+      <ul class="footer-list">
+
+        <li>
+          <a href="#" class="footer-link">Terms of use</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Privacy & Policy</a>
+        </li>
+
+      </ul>
+
+      <p class="copyright">
+        Copyright 2024 <a href="#" class="copyright-link"> Smile & share</a>. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+  <script src="./assets/js/script.js"></script>
+ 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
