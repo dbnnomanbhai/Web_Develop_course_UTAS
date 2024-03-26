@@ -1,0 +1,31 @@
+/* styles.css */
+
+/* Custom styles for the page */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.navbar {
+  border-bottom: 2px solid #dee2e6;
+}
+
+/* Style for modal content */
+.modal-content {
+  border-radius: 10px;
+}
+
+/* Style for buttons */
+.btn {
+  border-radius: 20px;
+}
+
+/* Style for form elements */
+.form-label {
+  font-weight: bold;
+}
