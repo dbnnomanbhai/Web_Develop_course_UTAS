@@ -1,0 +1,49 @@
+
+
+ 
+      
+     
+body {
+  padding-top: 70px;
+}
+   .error {
+            color: red;
+        }
+.container {
+  margin-top: 30px;
+ text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+}
+
+ #backToTopBtn {
+            display: none; /* Hide the button by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 20px; /* Place the button 20px from the right */
+            background-color: #007bff; /* Blue background color */
+            color: white; /* White text color */
+            text-decoration: none; /* Remove default underline */
+            padding: 15px; /* Add some padding */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 16px; /* Increase font size */
+        }
+
+        #backToTopBtn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+ .red-btn {
+            background-color: #dc3545; /* Red color */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Add padding */
+            font-size: 16px; /* Increase font size */
+        }
+
+        .red-btn:hover {
+            background-color: #c82333; /* Darker red on hover */
+    </style>
