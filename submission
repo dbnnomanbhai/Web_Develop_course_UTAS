@@ -1,0 +1,218 @@
+<?php
+include('db_conn.php');
+
+// Check for CRUD actions in the URL parameters
+if(isset($_GET['action'])) {
+    $action = $_GET['action'];
+
+    // Perform CRUD actions based on the action parameter
+    switch($action) {
+        case 'view':
+            viewPaper();
+            break;
+        case 'edit':
+            displayEditForm();
+            break;
+        case 'update':
+            updatePaper();
+            break;
+        case 'delete':
+            deletePaper();
+            break;
+        case 'review':
+            showAllReviews();
+            break;
+        case 'process_add': // Added case for processing add paper form
+            processAddPaper();
+            break;
+        default:
+            die("Invalid action");
+    }
+} else {
+    // Default action: Display paper information
+    viewPaper();
+}
+
+function viewPaper() {
+    global $db;
+    try {
+        // Query to select paper data
+        $query = "SELECT * FROM paper";
+        // Execute the query
+        $stmt = $db->query($query);
+
+        if ($stmt === false) {
+            die("Error executing the query");
+        }
+
+        echo "
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Paper Information</title>
+            <style>
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #f2f2f2;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Paper Information</h1>
+            <table border='1'>
+                <tr>
+                    <th>ID</th>
+                    <th>Author</th>
+                    <th>Type</th>
+                    <th>Title</th>
+                    <th>Abstract</th>
+                    <th>Location</th>
+                    <th>Score</th>
+                    <th>Actions</th>
+                </tr>";
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<tr>
+                <td>{$row['id']}</td>
+                <td>{$row['author']}</td>
+                <td>{$row['type']}</td>
+                <td>{$row['title']}</td>
+                <td>{$row['abstract']}</td>
+                <td>{$row['location']}</td>
+                <td>{$row['score']}</td>
+                <td>
+                    <a href='?action=edit&id={$row['id']}'>Edit</a>
+                    <a href='?action=delete&id={$row['id']}' onclick='return confirmDelete()'>Delete</a>
+                    <a href='?action=review'>Review</a>
+                </td>
+            </tr>";
+        }
+
+        echo "</table>";
+        echo "<br><a href='#' onclick='showAddPaperForm()'>Add Paper</a>"; // Call JS function
+        echo "</body></html>";
+    } catch(PDOException $e) {
+        die("Error: " . $e->getMessage());
+    }
+}
+
+// JavaScript function to show the add paper form in a modal/popup
+echo "
+<script>
+function showAddPaperForm() {
+    document.getElementById('addPaperModal').style.display = 'block';
+}
+
+function hideAddPaperForm() {
+    document.getElementById('addPaperModal').style.display = 'none';
+}
+</script>";
+
+// Add Paper Modal
+echo "
+<div id='addPaperModal' style='display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:1000;'>
+    <div style='background-color:white;width:50%;margin: 15% auto;padding:20px;border-radius:5px;'>
+        <h2>Add Paper</h2>
+        <form action='?action=process_add' method='post'>
+            <label for='author'>Author:</label>
+            <input type='text' id='author' name='author' required><br><br>
+
+            <label for='type'>Type:</label>
+            <input type='text' id='type' name='type' required><br><br>
+
+            <label for='title'>Title:</label>
+            <input type='text' id='title' name='title' required><br><br>
+
+            <label for='abstract'>Abstract:</label>
+            <textarea id='abstract' name='abstract' rows='4' cols='50' required></textarea><br><br>
+
+            <label for='location'>Location:</label>
+            <input type='text' id='location' name='location' required><br><br>
+
+            <label for='score'>Score:</label>
+            <input type='number' id='score' name='score' required><br><br>
+
+            <input type='submit' value='Add Paper'>
+        </form>
+        <button onclick='hideAddPaperForm()'>Close</button>
+    </div>
+</div>";
+
+function displayEditForm() {
+    // Display edit form based on ID parameter
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+        // Fetch paper data for editing
+        // Display edit form using HTML
+        echo "
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Edit Paper</title>
+        </head>
+        <body>
+            <h1>Edit Paper</h1>
+            <form action='?action=update&id={$id}' method='post'>
+                <!-- Add input fields for editing here -->
+                <input type='submit' value='Update'>
+            </form>
+        </body>
+        </html>";
+    } else {
+        die("Invalid request");
+    }
+}
+
+// Add your updatePaper, deletePaper, and showAllReviews functions here
+
+// Process add paper form data
+function processAddPaper() {
+    global $db;
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        $author = $_POST['author'];
+        $type = $_POST['type']; // Assuming type is a field in your form
+        $title = $_POST['title']; // Assuming title is a field in your form
+        $abstract = $_POST['abstract']; // Assuming abstract is a field in your form
+        $location = $_POST['location']; // Assuming location is a field in your form
+        $score = $_POST['score']; // Assuming score is a field in your form
+
+        try {
+            // Prepare the SQL insert statement
+            $query = "INSERT INTO paper (author, type, title, abstract, location, score) 
+                      VALUES (:author, :type, :title, :abstract, :location, :score)";
+            $stmt = $db->prepare($query);
+
+            // Bind parameters
+            $stmt->bindParam(':author', $author);
+            $stmt->bindParam(':type', $type);
+            $stmt->bindParam(':title', $title);
+            $stmt->bindParam(':abstract', $abstract);
+            $stmt->bindParam(':location', $location);
+            $stmt->bindParam(':score', $score);
+
+            // Execute the query
+            $stmt->execute();
+
+            echo "<script>alert('Paper added successfully!');</script>";
+            echo "<script>window.location.href = 'your_file_name.php?action=view';</script>"; // Redirect after adding
+            exit();
+        } catch (PDOException $e) {
+            die("Error adding paper: " . $e->getMessage());
+        }
+    } else {
+        die("Invalid request");
+    }
+}
+?>
