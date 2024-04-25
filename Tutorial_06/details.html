@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Details.html</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>WD2024</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+       <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#registrationModal">Registration</a>
+            </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="details.html">Details</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid p-5 my-5 border">
+    <h1>
+      <center>Details about the conference </center>
+    </h1>
+  </div>
+  <div class="container-fluid  pt-1 pb-1 bg-light">
+    <h3>Conference Date: 22-24 September 2024</h3>
+    <h5> Submission deadlines and page limits</h5>
+  </div>
+
+  </div>
+  <div class="container-fluid mt-3">
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <td></td>
+          <td><b>Page</b></td>
+          <td><b>Deadline</b></td>
+        </tr>
+      </thead>
+      <tr>
+        <td>Paper</td>
+        <td>6 pages plus 1 page for references if required</td>
+        <td>1 April</td>
+      </tr>
+      <tr>
+        <td>Working group</td>
+        <td>2 pages</td>
+        <td>1 April</td>
+      </tr>
+      <tr>
+        <td>Poster</td>
+        <td>1 page</td>
+        <td>15 Jun</td>
+      </tr>
+      <tr>
+        <td>Doctoral consortium </td>
+        <td>2 pages</td>
+        <td>15 Jun</td>
+      </tr>
+      <tr>
+        <td>Tips, Technique & Courseware </td>
+        <td>2 pages</td>
+        <td>15 Jun</td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div class="container-fluid">
+    <table class="table table-hover">
+      <thead>
+        <h3>Contact Address</h3>
+      </thead>
+      <tr>
+        <td><b>Conference Chair</b> conferencechair@conference.com</td>
+      </tr>
+      <tr>
+        <td><b>Organisation</b> Organisation@conference.com</td>
+      </tr>
+      <tr>
+        <td><b>Supporter Liaison</b> support@conference.com</td>
+      </tr>
+    </table>
+  </div>
+
+
+  <footer>
+    <div class="container-fluid mt-5">
+      <div class="row">
+        <div class="col">
+          &#169;2024 Web Development Conference
+          <a href="">Privacy.</a><a href="">Terms</a>
+        </div>
+        <div class="col text-end">
+          <a href="#">Back to top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registrationModalLabel"> Registration </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <form>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <small class="form-text text-muted">We will never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{7,12}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" pattern="(?=.*\d)(?=.*[a-zA-Z]).{7,12}" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Research Student?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="researchStudent" id="researchYes" value="yes">
+                            <label class="form-check-label" for="researchYes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="researchStudent" id="researchNo" value="no" checked>
+                            <label class="form-check-label" for="researchNo">No</label>
+                        </div>
+                    </div>
+<br> </br>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="termsAndConditions" required>
+                        <label class="form-check-label" for="termsAndConditions">I acknowledge that I have read and understand the terms and conditions.</label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+</div>
+<div class="modal-footer">
+
+
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+  </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
